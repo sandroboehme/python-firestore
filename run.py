@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     # Then query for documents
     users_ref = db.collection(u'users')
-    docs = users_ref.get()
+    docs = users_ref.stream()
 
     for doc in docs:
         print(u'{} => {}'.format(doc.id, doc.to_dict()))
